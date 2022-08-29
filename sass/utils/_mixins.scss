@@ -1,0 +1,3 @@
+@mixin functioning_list-hover ($color: $primary_color){
+    background-color: lighten($color,35%); 
+}

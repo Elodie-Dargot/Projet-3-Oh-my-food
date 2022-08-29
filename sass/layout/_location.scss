@@ -1,0 +1,12 @@
+.location {
+    background-color: rgb(236, 234, 234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4%;
+    box-shadow: inset 0 7px 3px -5px rgba(99, 99, 99, 0.2);
+    p {
+        font-weight: bold;
+    }
+
+}

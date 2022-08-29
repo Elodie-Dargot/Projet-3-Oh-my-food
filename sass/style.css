@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  font-family: roboto, sans-serif;
+}
+
+header .logo {
+  width: 44%;
+  height: 8%;
+  display: block;
+  margin: auto;
+}
+
+.location {
+  background-color: rgb(236, 234, 234);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4%;
+  box-shadow: inset 0 7px 3px -5px rgba(99, 99, 99, 0.2);
+}
+.location p {
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f1f1;
+}
+main h1 {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  margin: 37px 50px 0px 50px;
+}
+main p {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 13px;
+}
+main div {
+  border: 0px solid transparent;
+  border-radius: 50px;
+  padding: 16px 22px 16px 22px;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  margin: 15px 0 58px 0;
+}
+main div a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.functioning {
+  height: 400px;
+}
+.functioning h2 {
+  padding-left: 5%;
+  padding-top: 7%;
+  font-size: 24px;
+  font-weight: 900;
+}
+.functioning .functioning__list {
+  height: 100%;
+  padding-left: 8%;
+  margin-top: 9%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6%;
+}
+.functioning li {
+  position: relative;
+  width: 90%;
+  height: 18%;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  column-gap: 8%;
+  padding-left: 10%;
+  background-color: #fbf9f9;
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px rgba(182, 179, 179, 0.5);
+  vertical-align: middle;
+  counter-increment: steps;
+}
+.functioning li::before {
+  content: counter(steps);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  left: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  color: white;
+}
+.functioning li:hover {
+  background-color: #f2eafb;
+}
+.functioning li i {
+  color: gray;
+  font-size: 20px;
+}
+.functioning li p {
+  margin: auto;
+}
+
+.card_img {
+  width: 30px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
