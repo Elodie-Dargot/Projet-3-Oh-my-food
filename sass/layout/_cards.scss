@@ -1,4 +1,79 @@
-.card_img {
-    width: 30px;
-    height: 30px;
+.cards-section__card {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 255px;
+        @include box-shadow;
+        border-radius: 10px;
+        &__description {
+            height: 31%;
+            display: flex;
+            align-items: center;
+            column-gap: 25%;
+            i {
+                font-size: 24px;
+                position: relative;
+                z-index: 1;
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    left: 0;
+                    right:0;
+                    background-image: linear-gradient(to bottom right, $secondary_color, $primary_color);
+                    opacity: 0;
+                    z-index: -1;
+                    transition: opacity 500ms;
+                    overflow: hidden;
+                }
+            }
+            &--position {
+                flex-basis: 60%;
+                display: flex;
+                flex-direction: column;
+            }
+            h3{
+                font-weight: 700;
+                margin: 0 0 0 6%;
+
+            }
+            p {
+                margin: 2% 0 0 6%;
+                font-size: 17px;
+                font-weight: 300;
+            }
+        }
+}
+
+.cards-section__card__img {
+    position: relative;
+    height: 69%;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 10px 0px 0px;
+    }
+    &__txt-img {
+        position: absolute;
+        right: 40px;
+        top: 10px;
+        @include darken;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border: 1px solid $tertiary_color;
+        background-color: $tertiary_color;
+        p {
+            margin: 0;
+        }
+    }
+
 }

@@ -1,3 +1,11 @@
-@mixin functioning_list-hover ($color: $primary_color){
+@mixin lighten ($color: $primary_color){
     background-color: lighten($color,35%); 
+}
+
+@mixin darken ($color: $tertiary_color){
+    color: darken($color, 40%);
+}
+
+@mixin box_shadow {
+    box-shadow: 3px 4px 10px $shadow_color;
 }

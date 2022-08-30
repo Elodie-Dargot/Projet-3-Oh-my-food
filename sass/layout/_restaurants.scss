@@ -1,0 +1,14 @@
+.cards-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1%;
+    height: 2000px;
+    background-color: $background_color;
+    h2 {
+        font-weight: 900;
+        align-self: flex-start;
+        margin: 14% 0 1% 5%;
+    }
+    
+} 

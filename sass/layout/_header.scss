@@ -1,8 +1,11 @@
-header .logo {
+header {
+        p{
+        margin: 0;
+        }
+        .logo {
         width: 44%;
-        height: 8%;
+        height: 10%;
         display: block;
-        margin: auto;
+        margin: 21px auto 13px auto;
+        }
 }
-
-
