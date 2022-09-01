@@ -1,12 +1,34 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   font-family: roboto, sans-serif;
 }
 
+.loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader p {
+  font-family: "Shrikhand", cursive;
+  width: 436px;
+  font-size: 80px;
+  background-image: linear-gradient(to top right, #99E2D0, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.main-wrapper {
+  position: relative;
+}
+
 header p {
   margin: 0;
 }
-header .logo {
+header .header__logo {
   width: 44%;
   height: 10%;
   display: block;
@@ -14,7 +36,7 @@ header .logo {
 }
 
 .location {
-  background-color: rgb(228, 228, 228);
+  background-color: #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +54,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(237, 234, 234, 0.7333333333);
+  background-color: #f6f6f6;
 }
 main h1 {
   font-size: 24px;
@@ -61,18 +83,18 @@ main div a {
 }
 
 .functioning {
-  height: 420px;
+  height: 65vh;
 }
 .functioning h2 {
   padding-left: 5%;
-  padding-top: 8%;
+  padding-top: 4vh;
   font-size: 24px;
   font-weight: 900;
 }
 .functioning .functioning__list {
   height: 100%;
   padding-left: 8%;
-  margin-top: 7%;
+  margin-top: 4vh;
   display: flex;
   flex-direction: column;
   row-gap: 6%;
@@ -86,7 +108,7 @@ main div a {
   display: flex;
   align-items: center;
   padding-left: 10%;
-  background-color: rgba(237, 234, 234, 0.7333333333);
+  background-color: #f6f6f6;
   border-radius: 20px;
   box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
   counter-increment: steps;
@@ -108,6 +130,7 @@ main div a {
 }
 .functioning li:hover {
   background-color: #f2eafb;
+  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
 }
 .functioning li:hover i {
   color: #9356DC;
@@ -125,16 +148,18 @@ main div a {
   flex-direction: column;
   align-items: center;
   row-gap: 1%;
-  height: 2000px;
-  background-color: rgba(237, 234, 234, 0.7333333333);
+  height: 183vh;
+  background-color: #f6f6f6;
 }
 .cards-section h2 {
   font-weight: 900;
   align-self: flex-start;
-  margin: 14% 0 1% 5%;
+  margin: 7vh 0 1% 5%;
 }
 
 .cards-section__card {
+  text-decoration: none;
+  color: black;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -148,26 +173,22 @@ main div a {
   align-items: center;
   column-gap: 25%;
 }
-.cards-section__card__description i {
+.cards-section__card__description__heart {
   font-size: 24px;
-  position: relative;
-  z-index: 1;
 }
-.cards-section__card__description i:hover::after {
-  opacity: 1;
+.cards-section__card__description__heart:hover > .solid {
+  transform: scale(1);
 }
-.cards-section__card__description i::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 500ms;
-  overflow: hidden;
+.cards-section__card__description .solid {
+  margin-left: -30px;
+  margin-bottom: 6px;
+  font-size: 24px;
+  transform: scale(0);
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  color: transparent;
+  transform-origin: bottom;
+  transition: transform 400ms;
 }
 .cards-section__card__description--position {
   flex-basis: 60%;
@@ -201,6 +222,7 @@ main div a {
   color: #278870;
   font-size: 14px;
   font-weight: 700;
+  margin: 14px 14px;
   padding: 5px 10px;
   border-radius: 3px;
   border: 1px solid #99E2D0;
@@ -208,6 +230,41 @@ main div a {
 }
 .cards-section__card__img__txt-img p {
   margin: 0;
+}
+
+footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+}
+footer h3 {
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "Shrikhand", cursive;
+  color: white;
+  margin: 6% auto 1% 7%;
+}
+footer ul {
+  padding: 0 0 0 7%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6%;
+  height: 80%;
+}
+footer ul li {
+  list-style-type: none;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+footer ul li i {
+  color: white;
+  width: 16px; /* pour aligner le texte des 2 premières lignes*/
+  margin-right: 7px;
 }
 
 /*# sourceMappingURL=style.css.map */

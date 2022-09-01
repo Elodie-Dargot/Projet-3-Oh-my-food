@@ -6,6 +6,10 @@
     color: darken($color, 40%);
 }
 
-@mixin box_shadow {
+@mixin box_shadow{
     box-shadow: 3px 4px 10px $shadow_color;
+}
+
+@mixin box_shadow_darken{
+    box-shadow: 3px 4px 10px darken($shadow_color, 50%);
 }

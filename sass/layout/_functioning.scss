@@ -1,15 +1,15 @@
 .functioning {
-    height: 420px;
+    height: 65vh;
     h2 {
         padding-left: 5%;
-        padding-top: 8%;
+        padding-top: 4vh;
         font-size: 24px;
         font-weight: 900;
     }
     .functioning__list {
         height: 100%;
         padding-left: 8%;
-        margin-top: 7%;
+        margin-top: 4vh;
         display: flex;
         flex-direction: column;
         row-gap: 6%;
@@ -44,6 +44,7 @@
         }
         &:hover {
             @include lighten;
+            @include box_shadow_darken;
             i {
                 color: $primary_color;
             }
