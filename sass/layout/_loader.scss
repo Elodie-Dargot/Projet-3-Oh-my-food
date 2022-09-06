@@ -1,20 +1,190 @@
 .loader {
-    width: 100%;
-    height: 100%;
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    position: absolute;
+    top: 0; right: 0; bottom:0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000, $alpha: 0.8);
+    opacity: 1;
+    font-size: 50px;
+    letter-spacing: 10px;
+    animation: opacity 12s forwards;
     p {
         font-family: $font_family_logo;
-        width: 436px;
-        font-size: 80px;
-        background-image: linear-gradient(to top right, $tertiary_color, $secondary_color, $primary_color);
-        -webkit-background-clip: text;
-        color: transparent;
+        opacity: 1;
+        font-size: 30px;
+        letter-spacing: 25px;
+      }
+      .one {
+        color: $primary_color;
+        animation: spin 1000ms linear 6 alternate  forwards;
+      }
+      
+      .onee {
+        color: $primary_color;
+        filter: brightness(1.2);
+        animation: spin 1000ms 50ms linear 6 alternate  forwards;
+      }
+      
+      .oneee {
+        color: $primary_color;
+        filter: brightness(1.4);
+        animation: spin 1000ms 100ms linear 6 alternate  forwards;
+      }
+      
+      .two {
+        color: $secondary_color;
+        animation: spin 1000ms 150ms linear 6 alternate  forwards;
+      }
+      
+      .twoo {
+        color: $secondary_color;
+        filter: brightness(1.2);
+        animation: spin 1000ms 200ms linear 6 alternate  forwards;
+      }
+      
+      .twooo {
+        color: $secondary_color;
+        filter: brightness(1.4);
+        animation: spin 1000ms 250ms linear 6 alternate  forwards;
+      }
+      
+      .three {
+        color: $tertiary_color;
+        animation: spin 1000ms 300ms linear 6 alternate  forwards;
+      }
+      
+      .threee {
+        color: $tertiary_color;
+        filter: brightness(1.1);
+        animation: spin 1000ms 350ms linear 6 alternate  forwards;
+      }
+      
+      .threeee {
+        color: $tertiary_color;
+        filter: brightness(1.2);
+        animation: spin 1000ms 400ms linear 6 alternate  forwards;
+      }
+      
+      .threeeee {
+        color: $tertiary_color;
+        filter: brightness(1.3);
+        animation: spin 1000ms 450ms linear 6 alternate  forwards;
+      }
+      
+      .threeeeee {
+        color: $tertiary_color;
+        filter: brightness(1.4);
+        animation: spin 1000ms 500ms linear 6 alternate  forwards;
+      }
+  }
+  
+ /* @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-}
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+    
+  .one {
+    color: $primary_color;
+    animation: spin 1000ms 3;
+  }
+  
+  .onee {
+    color: $primary_color;
+    filter: brightness(1.2);
+    animation: spin 1000ms 50ms 3;
+  }
+  
+  .oneee {
+    color: $primary_color;
+    filter: brightness(1.4);
+    animation: spin 1000ms 100ms 3;
+  }
+  
+  .two {
+    color: $secondary_color;
+    animation: spin 1000ms 150ms 3;
+  }
+  
+  .twoo {
+    color: $secondary_color;
+    filter: brightness(1.2);
+    animation: spin 1000ms 200ms 3;
+  }
+  
+  .twooo {
+    color: $secondary_color;
+    filter: brightness(1.4);
+    animation: spin 1000ms 250ms 3;
+  }
+  
+  .three {
+    color: $tertiary_color;
+    animation: spin 1000ms 300ms 3;
+  }
+  
+  .threee {
+    color: $tertiary_color;
+    filter: brightness(1.1);
+    animation: spin 1000ms 350ms 3;
+  }
+  
+  .threeee {
+    color: $tertiary_color;
+    filter: brightness(1.2);
+    animation: spin 1000ms 400ms 3;
+  }
+  
+  .threeeee {
+    color: $tertiary_color;
+    filter: brightness(1.3);
+    animation: spin 1000ms 450ms 3;
+  }
+  
+  .threeeeee {
+    color: $tertiary_color;
+    filter: brightness(1.4);
+    animation: spin 1000ms 500ms 3;
+  }
 
 .main-wrapper {
     position: relative;
-}
+}*/
+
+@keyframes spin {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+
+  @keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+  
+  .main-wrapper {
+    position: relative;
+  }
+
+  
+

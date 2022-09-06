@@ -5,22 +5,179 @@
 }
 
 .loader {
-  width: 100%;
-  height: 100%;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  font-size: 50px;
+  letter-spacing: 10px;
+  animation: opacity 12s forwards;
 }
 .loader p {
   font-family: "Shrikhand", cursive;
-  width: 436px;
-  font-size: 80px;
-  background-image: linear-gradient(to top right, #99E2D0, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  color: transparent;
+  opacity: 1;
+  font-size: 30px;
+  letter-spacing: 25px;
+}
+.loader .one {
+  color: #9356DC;
+  animation: spin 1000ms linear 6 alternate forwards;
+}
+.loader .onee {
+  color: #9356DC;
+  filter: brightness(1.2);
+  animation: spin 1000ms 50ms linear 6 alternate forwards;
+}
+.loader .oneee {
+  color: #9356DC;
+  filter: brightness(1.4);
+  animation: spin 1000ms 100ms linear 6 alternate forwards;
+}
+.loader .two {
+  color: #FF79DA;
+  animation: spin 1000ms 150ms linear 6 alternate forwards;
+}
+.loader .twoo {
+  color: #FF79DA;
+  filter: brightness(1.2);
+  animation: spin 1000ms 200ms linear 6 alternate forwards;
+}
+.loader .twooo {
+  color: #FF79DA;
+  filter: brightness(1.4);
+  animation: spin 1000ms 250ms linear 6 alternate forwards;
+}
+.loader .three {
+  color: #99E2D0;
+  animation: spin 1000ms 300ms linear 6 alternate forwards;
+}
+.loader .threee {
+  color: #99E2D0;
+  filter: brightness(1.1);
+  animation: spin 1000ms 350ms linear 6 alternate forwards;
+}
+.loader .threeee {
+  color: #99E2D0;
+  filter: brightness(1.2);
+  animation: spin 1000ms 400ms linear 6 alternate forwards;
+}
+.loader .threeeee {
+  color: #99E2D0;
+  filter: brightness(1.3);
+  animation: spin 1000ms 450ms linear 6 alternate forwards;
+}
+.loader .threeeeee {
+  color: #99E2D0;
+  filter: brightness(1.4);
+  animation: spin 1000ms 500ms linear 6 alternate forwards;
 }
 
+/* @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .one {
+    color: $primary_color;
+    animation: spin 1000ms 3;
+  }
+
+  .onee {
+    color: $primary_color;
+    filter: brightness(1.2);
+    animation: spin 1000ms 50ms 3;
+  }
+
+  .oneee {
+    color: $primary_color;
+    filter: brightness(1.4);
+    animation: spin 1000ms 100ms 3;
+  }
+
+  .two {
+    color: $secondary_color;
+    animation: spin 1000ms 150ms 3;
+  }
+
+  .twoo {
+    color: $secondary_color;
+    filter: brightness(1.2);
+    animation: spin 1000ms 200ms 3;
+  }
+
+  .twooo {
+    color: $secondary_color;
+    filter: brightness(1.4);
+    animation: spin 1000ms 250ms 3;
+  }
+
+  .three {
+    color: $tertiary_color;
+    animation: spin 1000ms 300ms 3;
+  }
+
+  .threee {
+    color: $tertiary_color;
+    filter: brightness(1.1);
+    animation: spin 1000ms 350ms 3;
+  }
+
+  .threeee {
+    color: $tertiary_color;
+    filter: brightness(1.2);
+    animation: spin 1000ms 400ms 3;
+  }
+
+  .threeeee {
+    color: $tertiary_color;
+    filter: brightness(1.3);
+    animation: spin 1000ms 450ms 3;
+  }
+
+  .threeeeee {
+    color: $tertiary_color;
+    filter: brightness(1.4);
+    animation: spin 1000ms 500ms 3;
+  }
+
+.main-wrapper {
+    position: relative;
+}*/
+@keyframes spin {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .main-wrapper {
   position: relative;
 }
@@ -174,13 +331,14 @@ main div a {
   column-gap: 25%;
 }
 .cards-section__card__description__heart {
+  display: flex;
   font-size: 24px;
 }
 .cards-section__card__description__heart:hover > .solid {
   transform: scale(1);
 }
 .cards-section__card__description .solid {
-  margin-left: -30px;
+  margin-left: -24px;
   margin-bottom: 6px;
   font-size: 24px;
   transform: scale(0);
