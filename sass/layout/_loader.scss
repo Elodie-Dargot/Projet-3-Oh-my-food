@@ -3,188 +3,101 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    position: absolute;
-    top: 0; right: 0; bottom:0; left: 0;
+    position: fixed;
+    top: 0; right: 0; bottom:0; left: 0px;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #000, $alpha: 0.8);
-    opacity: 1;
-    font-size: 50px;
-    letter-spacing: 10px;
-    animation: opacity 12s forwards;
-    p {
+    background-color: $background_color;
+    animation: opacity 6s forwards;
+    &__spinner {
         font-family: $font_family_logo;
-        opacity: 1;
         font-size: 30px;
-        letter-spacing: 25px;
-      }
-      .one {
+        letter-spacing: 5px;
+        &--first {
         color: $primary_color;
-        animation: spin 1000ms linear 6 alternate  forwards;
-      }
-      
-      .onee {
+        animation: spin $anim_spin_duration $anim_spin_repetitions backwards;
+        }
+        &--second {
         color: $primary_color;
         filter: brightness(1.2);
-        animation: spin 1000ms 50ms linear 6 alternate  forwards;
-      }
-      
-      .oneee {
+        animation: spin $anim_spin_duration 50ms $anim_spin_repetitions backwards;
+        }
+        &--third {
         color: $primary_color;
         filter: brightness(1.4);
-        animation: spin 1000ms 100ms linear 6 alternate  forwards;
-      }
-      
-      .two {
+        animation: spin $anim_spin_duration 100ms $anim_spin_repetitions backwards;
+        }
+        &--fourth {
         color: $secondary_color;
-        animation: spin 1000ms 150ms linear 6 alternate  forwards;
-      }
-      
-      .twoo {
+        animation: spin $anim_spin_duration 150ms $anim_spin_repetitions backwards;
+        }
+        &--fifth {
         color: $secondary_color;
         filter: brightness(1.2);
-        animation: spin 1000ms 200ms linear 6 alternate  forwards;
-      }
-      
-      .twooo {
+        animation: spin $anim_spin_duration 200ms $anim_spin_repetitions backwards;
+        }
+        &--sixth {
         color: $secondary_color;
         filter: brightness(1.4);
-        animation: spin 1000ms 250ms linear 6 alternate  forwards;
-      }
-      
-      .three {
+        animation: spin $anim_spin_duration 250ms $anim_spin_repetitions backwards;
+        }
+        &--seventh {
         color: $tertiary_color;
-        animation: spin 1000ms 300ms linear 6 alternate  forwards;
-      }
-      
-      .threee {
+        animation: spin $anim_spin_duration 300ms $anim_spin_repetitions backwards;
+        }
+        &--eighth {
         color: $tertiary_color;
         filter: brightness(1.1);
-        animation: spin 1000ms 350ms linear 6 alternate  forwards;
-      }
-      
-      .threeee {
+        animation: spin $anim_spin_duration 350ms $anim_spin_repetitions backwards;
+        }
+        &--ninth {
         color: $tertiary_color;
         filter: brightness(1.2);
-        animation: spin 1000ms 400ms linear 6 alternate  forwards;
-      }
-      
-      .threeeee {
+        animation: spin $anim_spin_duration 400ms $anim_spin_repetitions backwards;
+        }
+        &--tenth {
         color: $tertiary_color;
         filter: brightness(1.3);
-        animation: spin 1000ms 450ms linear 6 alternate  forwards;
-      }
-      
-      .threeeeee {
+        animation: spin $anim_spin_duration 450ms $anim_spin_repetitions backwards;
+        }
+        &--eleventh {
         color: $tertiary_color;
         filter: brightness(1.4);
-        animation: spin 1000ms 500ms linear 6 alternate  forwards;
+        animation: spin $anim_spin_duration 500ms $anim_spin_repetitions backwards;
+        }
       }
+}
+
+
+  @keyframes opacity {
+    0% {
+        opacity: 1;
+        z-index: 1;
+    }
+    99% {
+      opacity: 0.9;
+      z-index: 1;
+    }
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
   }
   
- /* @keyframes spin {
+   @keyframes spin {
     0% {
       transform: rotate(0deg);
+      height: 100%;
     }
     50% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
-    }
-  }
-    
-  .one {
-    color: $primary_color;
-    animation: spin 1000ms 3;
-  }
-  
-  .onee {
-    color: $primary_color;
-    filter: brightness(1.2);
-    animation: spin 1000ms 50ms 3;
-  }
-  
-  .oneee {
-    color: $primary_color;
-    filter: brightness(1.4);
-    animation: spin 1000ms 100ms 3;
-  }
-  
-  .two {
-    color: $secondary_color;
-    animation: spin 1000ms 150ms 3;
-  }
-  
-  .twoo {
-    color: $secondary_color;
-    filter: brightness(1.2);
-    animation: spin 1000ms 200ms 3;
-  }
-  
-  .twooo {
-    color: $secondary_color;
-    filter: brightness(1.4);
-    animation: spin 1000ms 250ms 3;
-  }
-  
-  .three {
-    color: $tertiary_color;
-    animation: spin 1000ms 300ms 3;
-  }
-  
-  .threee {
-    color: $tertiary_color;
-    filter: brightness(1.1);
-    animation: spin 1000ms 350ms 3;
-  }
-  
-  .threeee {
-    color: $tertiary_color;
-    filter: brightness(1.2);
-    animation: spin 1000ms 400ms 3;
-  }
-  
-  .threeeee {
-    color: $tertiary_color;
-    filter: brightness(1.3);
-    animation: spin 1000ms 450ms 3;
-  }
-  
-  .threeeeee {
-    color: $tertiary_color;
-    filter: brightness(1.4);
-    animation: spin 1000ms 500ms 3;
-  }
-
-.main-wrapper {
-    position: relative;
-}*/
-
-@keyframes spin {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(2);
+      height: 0%;
     }
   }
 
-  @keyframes opacity {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-  }
-  
-  .main-wrapper {
-    position: relative;
-  }
 
   
 
