@@ -2,13 +2,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1%;
-    height: 183vh;
+    row-gap: 1.5%;
+    height: 1248px;
     background-color: $background_color;
+    @include tablet-only{
+        height: 760px;
+        row-gap: 5%;
+    }
     h2 {
         font-weight: 900;
         align-self: flex-start;
-        margin: 7vh 0 1% 5%;
+        margin: 55px 0 5px 25px;
+        @include tablet-only{
+            margin-left: 8%;
+        }
     }
-    
-} 
+    &__all-cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2%;
+        width: 90%;
+        @include tablet-only{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            row-gap: 8%;
+        }
+    }
+
+}

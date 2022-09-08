@@ -1,5 +1,0 @@
-@function functioning__list-hover ($color: $primary_color){
-    @if li=":hover"{
-        @return color:$primary_color
-    }
-}

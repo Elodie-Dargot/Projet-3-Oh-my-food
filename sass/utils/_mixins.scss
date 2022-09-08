@@ -13,3 +13,16 @@
 @mixin box_shadow_darken{
     box-shadow: 3px 4px 10px darken($shadow_color, 50%);
 }
+
+@mixin tablet-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;        
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+    
+}

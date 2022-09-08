@@ -1,24 +1,35 @@
 .functioning {
-    height: 65vh;
+    height: 440px;
+    @include tablet-only{
+        height: 260px;
+    }
     h2 {
         padding-left: 5%;
-        padding-top: 4vh;
-        font-size: 24px;
+        padding-top: 45px;
+        font-size: map-get($map: $font-size, $key: title);
         font-weight: 900;
+        @include tablet-only {
+            padding-top: 30px;
+        }
     }
     .functioning__list {
         height: 100%;
         padding-left: 8%;
-        margin-top: 4vh;
+        margin-top: 5vh;
         display: flex;
         flex-direction: column;
         row-gap: 6%;
+        @include tablet-only{
+            flex-direction: row;
+            justify-content: space-around;
+            padding-left: 2%;
+         }
     }
     li {
         position: relative;
         width: 95%;
-        height: 18%;
-        font-size: 18px;
+        height: 16%;
+        font-size: map-get($map: $font-size, $key: text);
         font-weight: 700;
         display: flex;
         align-items: center;
@@ -27,13 +38,22 @@
         border-radius: 20px;
         @include box-shadow;
         counter-increment: steps;
+        @include tablet-only{
+            width: 30%;
+            padding-left: 3%;
+            height: 30%;
+            font-size: map-get($map: $font-size, $key: smaller);
+        }
+        @include desktop-only{
+            font-size: map-get($map: $font-size, $key: text);
+        }
         &::before {
             content: counter(steps);
             position: absolute;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 16px;
+            font-size: map-get($map: $font-size, $key: smaller);
             font-weight: 400;
             left: -10px;
             width: 24px;
@@ -56,6 +76,9 @@
         }
         p {
             margin-left: 9%;
+            @include tablet-only{
+                margin-left: 5%;
+            }
         }
     }
 
