@@ -1,0 +1,14 @@
+header {
+        .header__logo {
+        width: 44%;
+        height: 10%;
+        display: block;
+        margin: 21px auto 13px auto;
+        @include tablet-only {
+                width: 30%;
+         }
+        @include desktop-only{
+                width: 25%;
+         }
+        }
+}
