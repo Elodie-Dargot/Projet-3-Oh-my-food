@@ -8,9 +8,9 @@
     width: 100%;
     height: 100%;
     background-color: $background_color;
-    animation: opacity 6s forwards;
+    animation: opacity 3s forwards;
     &__spinner {
-        font-family: $font_family_logo;
+        font-family: $font_family_logo-titles;
         font-size: 40px;
         letter-spacing: 5px;
         @include tablet-only{
@@ -90,14 +90,12 @@
    @keyframes spin {
     0% {
       transform: rotate(0deg);
-      height: 100%;
     }
     50% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
-      height: 0%;
     }
   }
 
