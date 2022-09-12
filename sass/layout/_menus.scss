@@ -1,36 +1,74 @@
 .meal-picture {
-    width: 100%;
-    height: 300px;
-    position: relative;
-    img {
         width: 100%;
-        height: 100%;
+        height: 290px;
+        object-fit: cover;
     }
-}
 
 .menu {
     display: flex;
     flex-direction: column;
-    row-gap: 3%;
-    height: 1000px;
-    position: absolute;
-    top: 300px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: $background-color;
-    border-radius: 40px 40px 0px 0px / 40px 40px 0px 0px; 
-    &__title {
+    row-gap: 2%;
+    height: 1230px;
+    background-color: $background-color; 
+    @include desktop-only {
+        height: 700px;
+        row-gap: 10%;
+    }
+    /* pour positionner les differents éléments du conteneur sinon le bouton passait sur le menu*/
+    > :nth-child(2) {
+        flex: 1; 
+        @include desktop-only {
+            flex: initial;
+        }
+    }
+    &__button {
+        @include button;
+        align-self: center;
+        width: 185px;
+        margin-bottom: 60px;
+        @include desktop-only {
+            margin-bottom: 0;
+        }
+    }
+    &__all-cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4%;
+        /*animation: aparition 3s ease-in-out 200ms forwards;
+        transform-origin: top;*/
+        @include desktop-only {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+}
+
+
+
+.menu__title {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        height: 6%;
-        padding-top: 44px;
+        margin-top: -70px; /* pour superposer à l'image, si emploi de position relative sur le .menu un écart apparaissait avec le footer*/
+        padding-top: 30px;
+        height: 80px;
+        background-color: $background-color;
+        border-radius: 40px 40px 0px 0px / 40px 40px 0px 0px;
+        @include tablet-only {
+            justify-content: center;
+            column-gap: 2%;
+
+        }
         h1 {
             font-family: $font_family_logo-titles;
             font-size: 28px;
             font-weight: 500;
             margin: 0;
+            @include desktop-only {
+                font-size: 40px;
+            }
         }
         &__heart {
             @include heart;
@@ -40,11 +78,5 @@
         .solid {
             @include heart_hover;
         }
-    }
-    &__button {
-        @include button;
-        align-self: center;
-        width: 185px;
-        margin-top: 25px;
-    }
 }
+

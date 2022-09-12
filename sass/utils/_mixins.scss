@@ -6,13 +6,14 @@
     color: darken($color, 40%);
 }
 
-@mixin box_shadow{
+@mixin box_shadow {
     box-shadow: 3px 4px 10px $shadow_color;
+    &:hover {
+        box-shadow: 3px 4px 10px darken($shadow_color, 50%);
+    }
 }
 
-@mixin box_shadow_darken{
-    box-shadow: 3px 4px 10px darken($shadow_color, 50%);
-}
+
 
 @mixin button {
     border: 0px solid transparent;
@@ -21,11 +22,10 @@
     background-image: linear-gradient(to bottom right, $secondary_color, $primary_color);
     text-align: center;
     &:hover {
-        @include box_shadow_darken;  
+        @include box_shadow;  
         opacity: 0.8; 
     }  
     a {
-        
         text-decoration: none;
         color: white;
         font-size: map-get($map: $font-size, $key: smaller);

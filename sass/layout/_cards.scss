@@ -10,7 +10,7 @@
         @include tablet-only{
             width: 45%;
             &:hover {
-                @include box_shadow_darken;
+                @include box_shadow;
             }
         }
         &__description {

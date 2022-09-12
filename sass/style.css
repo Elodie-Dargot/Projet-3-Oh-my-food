@@ -6,6 +6,12 @@
   padding: 0;
 }
 
+/*
+#main-wrapper {
+    @include desktop-only{
+        height: 20px;
+    }
+}*/
 .loader {
   display: flex;
   justify-content: center;
@@ -182,8 +188,11 @@ main .button {
   margin: 30px 0 57px 0;
 }
 main .button:hover {
-  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
+  box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
   opacity: 0.8;
+}
+main .button:hover:hover {
+  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
 }
 main .button a {
   text-decoration: none;
@@ -240,6 +249,9 @@ main .button a {
   box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
   counter-increment: steps;
 }
+.functioning li:hover {
+  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
+}
 @media screen and (min-width: 768px) {
   .functioning li {
     width: 30%;
@@ -270,6 +282,9 @@ main .button a {
 }
 .functioning li:hover {
   background-color: #f2eafb;
+  box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
+}
+.functioning li:hover:hover {
   box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
 }
 .functioning li:hover i {
@@ -337,11 +352,17 @@ main .button a {
   box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
   border-radius: 15px;
 }
+.cards-section__all-cards__card:hover {
+  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
+}
 @media screen and (min-width: 768px) {
   .cards-section__all-cards__card {
     width: 45%;
   }
   .cards-section__all-cards__card:hover {
+    box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
+  }
+  .cards-section__all-cards__card:hover:hover {
     box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
   }
 }
@@ -413,39 +434,102 @@ main .button a {
 
 .meal-picture {
   width: 100%;
-  height: 300px;
-  position: relative;
-}
-.meal-picture img {
-  width: 100%;
-  height: 100%;
+  height: 290px;
+  object-fit: cover;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  row-gap: 3%;
-  height: 1000px;
-  position: absolute;
-  top: 300px;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  row-gap: 2%;
+  height: 1230px;
   background-color: #f6f6f6;
-  border-radius: 40px 40px 0px 0px/40px 40px 0px 0px;
+  /* pour positionner les differents éléments du conteneur sinon le bouton passait sur le menu*/
 }
+@media screen and (min-width: 992px) {
+  .menu {
+    height: 700px;
+    row-gap: 10%;
+  }
+}
+.menu > :nth-child(2) {
+  flex: 1;
+}
+@media screen and (min-width: 992px) {
+  .menu > :nth-child(2) {
+    flex: initial;
+  }
+}
+.menu__button {
+  border: 0px solid transparent;
+  border-radius: 50px;
+  padding: 16px 22px 16px 22px;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  text-align: center;
+  align-self: center;
+  width: 185px;
+  margin-bottom: 60px;
+}
+.menu__button:hover {
+  box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
+  opacity: 0.8;
+}
+.menu__button:hover:hover {
+  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
+}
+.menu__button a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+@media screen and (min-width: 992px) {
+  .menu__button {
+    margin-bottom: 0;
+  }
+}
+.menu__all-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4%;
+  /*animation: aparition 3s ease-in-out 200ms forwards;
+  transform-origin: top;*/
+}
+@media screen and (min-width: 992px) {
+  .menu__all-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
 .menu__title {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 6%;
-  padding-top: 44px;
+  margin-top: -70px; /* pour superposer à l'image, si emploi de position relative sur le .menu un écart apparaissait avec le footer*/
+  padding-top: 30px;
+  height: 80px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0px 0px/40px 40px 0px 0px;
+}
+@media screen and (min-width: 768px) {
+  .menu__title {
+    justify-content: center;
+    column-gap: 2%;
+  }
 }
 .menu__title h1 {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   font-weight: 500;
   margin: 0;
+}
+@media screen and (min-width: 992px) {
+  .menu__title h1 {
+    font-size: 40px;
+  }
 }
 .menu__title__heart {
   display: flex; /*pour aligner le coeur en dégradé sinon il est décalé du coeur vide*/
@@ -467,35 +551,53 @@ main .button a {
   transform-origin: bottom;
   transition: transform 400ms;
 }
-.menu__button {
-  border: 0px solid transparent;
-  border-radius: 50px;
-  padding: 16px 22px 16px 22px;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  text-align: center;
-  align-self: center;
-  width: 185px;
-  margin-top: 25px;
-}
-.menu__button:hover {
-  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
-  opacity: 0.8;
-}
-.menu__button a {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  font-weight: 400;
-}
 
-.menu__card {
+@keyframes aparition {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes check {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.menu__all-cards__card {
   height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 5%;
+  /* &--appetizers {
+       animation: aparition 3s ease-in-out 200ms forwards;
+       transform-origin: top;
+   }
+   &--dish {
+       animation: aparition 3s ease-in-out 300ms forwards;
+       transform-origin: top;
+   }
+   &--desserts {
+       animation: aparition 3s ease-in-out 400ms forwards;
+       transform-origin: top;
+   }*/
 }
-.menu__card__title {
+@media screen and (min-width: 992px) {
+  .menu__all-cards__card {
+    width: 30%;
+    row-gap: 10%;
+    height: 400px;
+  }
+}
+.menu__all-cards__card__title {
   align-self: flex-start;
   text-transform: uppercase;
   font-size: 16px;
@@ -503,44 +605,77 @@ main .button a {
   margin-left: 15px;
   margin-bottom: 10px;
 }
-.menu__card__title span {
+.menu__all-cards__card__title span {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 3px;
 }
-.menu__card__btn {
+
+.menu__all-cards__card__btn {
   display: flex;
   align-items: center;
   background-color: white;
   box-shadow: 3px 4px 10px rgba(182, 179, 179, 0.5);
-  border-radius: 10px/10pX;
+  border-radius: 15px/15pX;
   width: 95%;
-  height: 200px;
+  height: 90px;
 }
-.menu__card__btn__meal {
+.menu__all-cards__card__btn:hover {
+  box-shadow: 3px 4px 10px rgba(54, 52, 52, 0.5);
+}
+@media screen and (min-width: 992px) {
+  .menu__all-cards__card__btn {
+    height: 20%;
+    border-radius: 30px/30px;
+  }
+}
+.menu__all-cards__card__btn:hover > .menu__all-cards__card__btn__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #99E2D0;
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+  animation: check 3s;
+}
+.menu__all-cards__card__btn__meal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 8%;
   width: 100%;
   height: 100%;
-  padding-left: 10px;
+  padding: 10px;
 }
-.menu__card__btn__meal__description {
+@media screen and (min-width: 992px) {
+  .menu__all-cards__card__btn__meal {
+    padding-left: 20px;
+  }
+}
+
+.menu__all-cards__card__btn__meal__description {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
 }
-.menu__card__btn__meal__description > :nth-child(1) {
+.menu__all-cards__card__btn__meal__description > :nth-child(1) {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 80%;
 }
-.menu__card__btn__meal__description > :nth-child(2) {
+.menu__all-cards__card__btn__meal__description > :nth-child(2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 20%;
   padding-left: 20px;
 }
-.menu__card__btn__check {
+
+.menu__all-cards__card__btn__check {
   display: none;
 }
 
@@ -599,5 +734,14 @@ footer ul li i {
   width: 16px; /* pour aligner le texte des 2 premières lignes*/
   margin-right: 7px;
 }
+
+/* footer des 4 pages menu 
+ .footer-menus {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}*/
 
 /*# sourceMappingURL=style.css.map */
