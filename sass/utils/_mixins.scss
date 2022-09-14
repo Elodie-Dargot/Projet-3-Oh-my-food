@@ -53,6 +53,13 @@
     transition: transform 400ms;
 }
 
+@mixin cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 90%;  
+}
+
 @mixin tablet-only {
     @media screen and (min-width: map-get($breakpoints, tablet)) {
         @content;        
@@ -63,5 +70,4 @@
     @media screen and (min-width: map-get($breakpoints, desktop)) {
         @content;
     }
-    
 }
