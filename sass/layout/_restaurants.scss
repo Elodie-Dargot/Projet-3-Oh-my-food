@@ -2,12 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1.5%;
-    height: 1248px;
+    row-gap: 20px;
     background-color: $background_color;
     @include tablet-only{
-        height: 760px;
-        row-gap: 5%;
+        row-gap: 50px;
     }
     h2 {
         font-weight: 900;
@@ -20,13 +18,14 @@
     &__all-cards {
         display: flex;
         flex-direction: column;
-        row-gap: 2%;
+        row-gap: 20px;
         width: 90%;
+        margin-bottom: 65px;
         @include tablet-only{
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-            row-gap: 8%;
+            row-gap: 30px;
         }
     }
 

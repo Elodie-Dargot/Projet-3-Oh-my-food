@@ -6,12 +6,58 @@
     color: darken($color, 40%);
 }
 
-@mixin box_shadow{
+@mixin box_shadow {
     box-shadow: 3px 4px 10px $shadow_color;
+    &:hover {
+        box-shadow: 3px 4px 10px darken($shadow_color, 50%);
+    }
 }
 
-@mixin box_shadow_darken{
-    box-shadow: 3px 4px 10px darken($shadow_color, 50%);
+
+
+@mixin button {
+    border: 0px solid transparent;
+    border-radius: 50px;
+    padding: 16px 22px 16px 22px;
+    background-image: linear-gradient(to bottom right, $secondary_color, $primary_color);
+    text-align: center;
+    &:hover {
+        @include box_shadow;  
+        opacity: 0.8; 
+    }  
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: map-get($map: $font-size, $key: smaller);
+        font-weight: 400;
+    }
+}
+
+@mixin heart{
+    display: flex; /*pour aligner le coeur en dégradé sinon il est décalé du coeur vide*/
+    font-size: 24px;
+    &:hover > .solid {
+        transform: scale(1);
+    }
+}
+
+@mixin heart_hover{
+    margin-left: -24px;
+    margin-bottom: 6px;
+    font-size: 24px;
+    transform: scale(0);
+    background-image: linear-gradient(to bottom, $primary_color, $secondary_color);
+    -webkit-background-clip: text;
+    color: transparent;
+    transform-origin: bottom;
+    transition: transform 400ms;
+}
+
+@mixin cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 90%;  
 }
 
 @mixin tablet-only {
@@ -24,5 +70,4 @@
     @media screen and (min-width: map-get($breakpoints, desktop)) {
         @content;
     }
-    
 }

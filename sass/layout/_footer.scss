@@ -9,7 +9,7 @@ footer {
     h3 {
         font-size: map-get($map: $font-size, $key: text);
         font-weight: 100;
-        font-family: $font_family_logo;
+        font-family: $font_family_logo-titles;
         color: white;
         margin: 25px auto 20px 25px;
         @include tablet-only{
@@ -49,3 +49,11 @@ footer {
     }
 
 }
+ /* footer des 4 pages menu 
+ .footer-menus {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}*/

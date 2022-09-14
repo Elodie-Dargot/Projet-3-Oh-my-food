@@ -1,6 +1,6 @@
 @import "./utils/variables";
 @import "./utils/mixins";
-@import "./base/_base";
+@import "./base/base";
 @import "./layout/loader";
 @import "./layout/header";
 @import "./layout/location";
@@ -8,4 +8,6 @@
 @import "./layout/functioning";
 @import "./layout/restaurants";
 @import "./layout/cards";
-@import "./layout/footer"
+@import "./layout/menus";
+@import "./layout/menu-cards";
+@import "./layout/footer";

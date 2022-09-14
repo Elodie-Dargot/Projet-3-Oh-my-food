@@ -3,10 +3,12 @@ $secondary_color: #FF79DA;
 $tertiary_color: #99E2D0;
 $background_color: #f6f6f6;
 $shadow_color: rgba(182, 179, 179, 0.5);
-$font_family_logo: 'Shrikhand', cursive;
-$anim_spin_duration: 2000ms;
+$font_family_logo-titles: 'Shrikhand', cursive;
+$anim_spin_duration: 1000ms;
 $anim_spin_repetitions: 3;
+$anim_menus_duration: 2000ms;
 $font-size: (
+    bigger: 26px,
     title: 24px,
     text: 18px,
     smaller: 16px,
