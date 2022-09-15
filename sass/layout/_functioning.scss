@@ -12,7 +12,7 @@
             padding-top: 30px;
         }
     }
-    .functioning__list {
+    &__list {
         height: 100%;
         padding-left: 8%;
         margin-top: 5vh;
@@ -23,63 +23,63 @@
             flex-direction: row;
             justify-content: space-around;
             padding-left: 2%;
-         }
+            }
     }
-    li {
-        position: relative;
-        width: 95%;
-        height: 16%;
+}
+
+.functioning__list li {
+    position: relative;
+    width: 95%;
+    height: 16%;
+    font-size: map-get($map: $font-size, $key: text);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    background-color: $background_color;
+    border-radius: 20px;
+    @include box-shadow;
+    counter-increment: steps;
+    @include tablet-only{
+        width: 30%;
+        padding-left: 3%;
+        height: 30%;
+        font-size: map-get($map: $font-size, $key: smaller);
+    }
+    @include desktop-only{
         font-size: map-get($map: $font-size, $key: text);
-        font-weight: 700;
+    }
+    &::before {
+        content: counter(steps);
+        position: absolute;
         display: flex;
+        justify-content: center;
         align-items: center;
-        padding-left: 10%;
-        background-color: $background_color;
-        border-radius: 20px;
-        @include box-shadow;
-        counter-increment: steps;
-        @include tablet-only{
-            width: 30%;
-            padding-left: 3%;
-            height: 30%;
-            font-size: map-get($map: $font-size, $key: smaller);
-        }
-        @include desktop-only{
-            font-size: map-get($map: $font-size, $key: text);
-        }
-        &::before {
-            content: counter(steps);
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: map-get($map: $font-size, $key: smaller);
-            font-weight: 400;
-            left: -10px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: $primary_color;
-            color: white;
-        }
-        &:hover {
-            @include lighten;
-            @include box_shadow;
-            i {
-                color: $primary_color;
-            }
-        }
-
+        font-size: map-get($map: $font-size, $key: smaller);
+        font-weight: 400;
+        left: -10px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: $primary_color;
+        color: white;
+    }
+    &:hover {
+        @include lighten;
+        @include box_shadow;
         i {
-            color: gray;
-            font-size: 20px;                
-        }
-        p {
-            margin-left: 9%;
-            @include tablet-only{
-                margin-left: 5%;
-            }
+            color: $primary_color;
         }
     }
 
+    i {
+        color: gray;
+        font-size: 20px;                
+    }
+    p {
+        margin-left: 9%;
+        @include tablet-only{
+            margin-left: 5%;
+        }
+    }
 }
