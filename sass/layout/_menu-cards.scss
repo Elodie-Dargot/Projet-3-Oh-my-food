@@ -56,19 +56,19 @@
         width: 30%;
         row-gap: 40px;
     }
-    &__title {
+}
+ 
+.menu__all-cards__card__title {
         align-self: flex-start;
         text-transform: uppercase;
         font-size: map-get($map: $font-size, $key: smaller);
         font-weight: 300;
         margin-left: 15px;
         margin-bottom: 10px;
-        
         span {
             border-bottom: 3px solid $tertiary_color;
             padding-bottom: 3px;
         }
-    }
 }
     
 .menu__all-cards__card__btn {
