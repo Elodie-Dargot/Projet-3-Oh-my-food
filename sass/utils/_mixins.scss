@@ -60,6 +60,12 @@
     width: 90%;  
 }
 
+@mixin breakword {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 @mixin tablet-only {
     @media screen and (min-width: map-get($breakpoints, tablet)) {
         @content;        
